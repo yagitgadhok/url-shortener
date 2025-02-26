@@ -37,4 +37,22 @@ const urlSchema = new mongoose.Schema({
   clicks: { type: Number, default: 0 },
 });
 
+// Creating model for the schema
+const Url = mongoose.model("Url", urlSchema);
+
+app.post("/api/short", async (req, res) => {
+  try {
+    const { originalUrl } = req.body;
+    const shortUrl = nanoid(8);
+    const url = new Url({ originalUrl, shortUrl });
+    await url.save();
+    return res
+      .status(200)
+      .json({ message: "URL Generated Successfully", url: url });
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({ message: "Error Generating URL" });
+  }
+});
+
 app.listen(3000, () => console.log("server running on port 3000"));
