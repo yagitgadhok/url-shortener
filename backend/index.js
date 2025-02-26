@@ -30,4 +30,11 @@ mongoose
     console.log("Error connecting ", err);
   });
 
+// Creating a model for the URL schema
+const urlSchema = new mongoose.Schema({
+  originalUrl: String,
+  shortUrl: String,
+  clicks: { type: Number, default: 0 },
+});
+
 app.listen(3000, () => console.log("server running on port 3000"));
