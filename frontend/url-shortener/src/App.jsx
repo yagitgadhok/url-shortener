@@ -20,6 +20,8 @@ function App() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+      <h1 className="text-3xl font-bold text-cyan-600">URL Shortener</h1>
+      <br />
       <input
         value={originalUrl}
         onChange={(e) => {
