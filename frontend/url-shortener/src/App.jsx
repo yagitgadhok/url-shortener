@@ -1,13 +1,21 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import axios from "axios";
 import "./App.css";
 
 function App() {
   const [originalUrl, setOriginalUrl] = useState("");
+  const [shortUrl, setShortUrl] = useState("");
 
   const handleSubmit = () => {
-    console.log("url:", originalUrl);
+    axios
+      .post("http://localhost:3000/api/short", { originalUrl })
+      .then((res) => {
+        setShortUrl(res.data.url.shortUrl);
+        console.log("data:", res);
+      })
+      .catch((err) => {
+        console.log("error:", err);
+      });
   };
 
   return (
@@ -30,6 +38,19 @@ function App() {
       >
         Shorten URL
       </button>
+      {shortUrl && (
+        <div className="mt-6 text-center">
+          <p className="text-lg bold font-medium">Shortened URL:</p>
+          <a
+            href={`http://localhost:3000/${shortUrl}`}
+            className="text-blue-400 underline mt-2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Short Url
+          </a>
+        </div>
+      )}
     </div>
   );
 }
