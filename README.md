@@ -101,5 +101,3 @@ Open a pull request
 This project is MIT licensed.
 
 🌟 Enjoy coding! 🚀
-
-1
