@@ -8,7 +8,9 @@ function App() {
 
   const handleSubmit = () => {
     axios
-      .post("https://url-shortener-odbp.onrender.com/api/short", { originalUrl })
+      .post("https://url-shortener-odbp.onrender.com/api/short", {
+        originalUrl,
+      })
       .then((res) => {
         setShortUrl(res.data);
         console.log("data:", res);
@@ -49,7 +51,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Short Url
+            {shortUrl.shortUrl}
           </a>
           {shortUrl && <img src={shortUrl.qrCodeImg} alt="linkQR" />}
         </div>
