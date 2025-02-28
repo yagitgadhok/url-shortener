@@ -24,7 +24,7 @@ API Handling: Axios
 
 State Management: Context API
 
-Deployment: Vercel (Frontend), Render(Backend)
+Deployment: Netlify (Frontend), Render(Backend)
 
 ⚡ Features
 
