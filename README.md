@@ -4,7 +4,7 @@ URL Shortener - MERN Stack
 
 🚀 Live Demo
 
-🔗 Visit the App
+🔗 Visit the App - https://url-shortener-frontend-7k6s.onrender.com
 
 Scan the QR code above to access the website directly.
 
@@ -24,7 +24,7 @@ API Handling: Axios
 
 State Management: Context API
 
-Deployment: Netlify (Frontend), Render(Backend)
+Deployment: Render (Frontend), Render(Backend)
 
 ⚡ Features
 
@@ -76,7 +76,7 @@ npm start
 
 🚀 Deployment
 
-Frontend: Deploy on Netlify
+Frontend: Deploy on Render
 
 Backend: Deploy on Render
 
