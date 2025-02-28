@@ -71,7 +71,7 @@ nodemon index.js # or node index.js
 
 Frontend:
 
-cd frontend
+cd frontend/url-shortener
 npm start
 
 🚀 Deployment
